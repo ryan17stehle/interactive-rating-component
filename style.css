@@ -1,0 +1,138 @@
+/* Variables */
+:root {
+    --Orange: hsl(25, 97%, 53%);
+    --White: hsl(0, 0%, 100%);
+    --Light-Grey: hsl(217, 12%, 63%);
+    --Medium-Grey: hsl(216, 12%, 54%);
+    --Dark-Blue: hsl(213, 19%, 18%);
+    --Very-Dark-Blue: hsl(216, 12%, 8%);
+
+}
+
+/* Reset */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Styles */
+html {
+    font-family: 'Overpass', sans-serif;
+    color: var(--Light-Grey)
+}
+
+body {
+    /* Put the widget in the center of the screen */
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: var(--Very-Dark-Blue);
+}
+
+button {
+    font: inherit;
+}
+
+h2 {
+    color: var(--White);
+    font-size: 24px;
+}
+
+p {
+    line-height: 22px;
+}
+
+/* Utility / Containers */
+.container {
+    border-radius: 1rem;
+    
+    min-width: 280px;
+    max-width: 420px;
+    padding: 1rem;
+
+    /* Black (Gradient) */
+    background: radial-gradient(98.96% 98.96% at 50% 0%, #232A34 0%, #181E27 100%);
+}
+
+.rating-state-container, .thank-you-state-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.thank-you-state-container {
+    align-items: center;
+    text-align: center;
+}
+
+.stars-container, .ratings-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Widget Styles */
+/* Submit Button */
+.submit {
+    border: none;
+    border-radius: 1rem;
+    background-color: var(--Orange);
+    color: var(--White);    
+    display: block;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 1rem;
+    width: 100%;
+}
+
+.submit:disabled {
+    opacity: 0.25;
+}
+
+.submit:hover {
+    cursor: pointer;
+}
+
+.submit:active {
+    background-color: var(--White);
+    color: var(--Orange);
+}
+
+/* Ratings Buttons */
+.rating {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    background-color: var(--Dark-Blue);
+    border-radius: 50%;
+    font-weight: bold;
+    line-height: 24px;
+}
+
+.rating:hover {
+    background-color: var(--Medium-Grey);
+    color: white;
+    cursor: pointer;
+}
+
+/* Star Display */
+.star {
+    width: 40px;
+    height: 40px;
+    background-color: var(--Dark-Blue);
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+}
+
+/* Selected (Rating) */
+.selected, .selected:hover {
+    background-color: var(--Orange);
+    color: var(--White);    
+}
+
+/* Hide rating-state-container / thank-you-state-container */
+.toggle-show {
+    display: none;
+}
